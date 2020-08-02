@@ -1,0 +1,37 @@
+#navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  background-color: #2d132c;
+  color: #fff;
+}
+
+nav > button {
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-ul-items {
+  text-align: center;
+}
+
+.nav-li-item {
+  padding: 15px;
+}
+
+.nav-li-item > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-logo {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
