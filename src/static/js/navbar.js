@@ -21,7 +21,9 @@ const adjustLogoSize = (e) => {
 
 const navButton = document.querySelector('.nav-button-trigger');
 const navLinks = document.querySelector('.nav-links');
-
+/**
+ * Fired on click of hamburger.
+ */
 navButton.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
