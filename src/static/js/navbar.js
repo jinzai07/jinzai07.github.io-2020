@@ -4,7 +4,7 @@
  * @param {*} e generic event object
  */
 const adjustLogoSize = (e) => {
-  const logo = document.getElementById('brand-logo');
+  const logo = document.querySelector('#brand-logo');
   const currentWidth = e.currentTarget.innerWidth;
   const maxWidth = e.currentTarget.outerWidth;
   const minWidthOffset = 956.2;
@@ -19,6 +19,13 @@ const adjustLogoSize = (e) => {
   logo.width = logo.height = currentWidth/(maxWidth/100);
 }
 
+const navButton = document.querySelector('.nav-button-trigger');
+const navLinks = document.querySelector('.nav-links');
+
+navButton.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
 /**
  * Fired on resize window.
  */
@@ -32,4 +39,3 @@ window.addEventListener('resize', (e) => {
 window.addEventListener('load', (e) => {
   adjustLogoSize(e);
 });
-
