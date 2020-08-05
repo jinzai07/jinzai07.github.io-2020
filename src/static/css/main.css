@@ -8,11 +8,16 @@
   padding: 0;
 }
 
-button:focus {
-  outline: none;
-}
-
 .resize-animation-stopper * {
   animation: none !important;
   transition: none !important;
+}
+
+.body-container {
+  height: 100%;
+  width: 100%;
+  background-color: #3f253e;
+  height: calc(100% - 8%);
+  position: fixed;
+  bottom: 0;
 }
