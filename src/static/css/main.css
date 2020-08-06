@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.body-container {
+  height: 100%;
+  width: 100%;
+  background-color: #3f253e;
+  height: calc(100% - 8%);
+  position: fixed;
+  bottom: 0;
+}
