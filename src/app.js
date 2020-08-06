@@ -14,11 +14,16 @@ app.use('/public',express.static(path.join(__dirname, 'static')));
 /**
  * Initialize App routes.
  */
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   const navLinks = ['Awards', 'About', 'Contact'];
   const quoteApi = 'https://quotes.rest/qod';
-  return res.render('index', { navLinks, quote: 'Great ambition is the passion of a great character.  Those endowed with it may perform very good or very bad acts.  All depends on the principals which direct them.' });
-  axios.get(quoteApi).then(quote => res.render('index', { navLinks, quote: quote.data.contents.quotes[0].quote }));
+  const quoteRequest = await axios.get(quoteApi);
+  const quoteResponse = {
+    quote: quoteRequest.data.contents.quotes[0].quote,
+    author: quoteRequest.data.contents.quotes[0].author
+  }
+
+  return res.render('index', { navLinks, quoteResponse });
 });
 app.get('/about', (req, res) => res.render('about'));
 

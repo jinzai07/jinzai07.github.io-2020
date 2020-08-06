@@ -1,7 +1,9 @@
 <link rel="stylesheet" href="/public/css/footer.css">
 
-<footer>
-  <h1>footah</h1>
-  <h1><%= quote %></h1>
+<footer id="footer">
+  <blockquote class="blockquote text-right">
+    <p class="mb-0"><%= quoteResponse.quote %></p>
+    <footer class="blockquote-footer"><%= quoteResponse.author %> </footer>
+  </blockquote>
 
 </footer>

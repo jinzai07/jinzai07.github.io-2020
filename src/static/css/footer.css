@@ -1,0 +1,13 @@
+#footer {
+  width: 100%;
+  color: white;
+  background-color: #2d132c;
+  position: fixed;
+  bottom: 0;
+}
+
+.blockquote {
+  padding: 15px;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
