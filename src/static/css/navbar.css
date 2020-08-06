@@ -1,6 +1,6 @@
 #navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   background-color: #2d132c;
   color: #fff;
   height: 10vh;
@@ -8,10 +8,15 @@
   width: 100%;
   z-index: 1;
   box-shadow: 0px 5px 15px 0px #1f0f1e;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 
 .nav-logo {
   width: auto;
+  position: fixed;
+  left: 0;
 }
 
 .nav-navigation {
@@ -73,8 +78,13 @@
     visibility: visible;
   }
 
+  .nav-logo {
+    position: relative;
+  }
+
   #navigation {
     flex-direction: column;
     height: auto;
+    justify-content: space-between;
   }
 }
