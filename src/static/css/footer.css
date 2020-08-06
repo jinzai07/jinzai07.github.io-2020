@@ -4,10 +4,20 @@
   background-color: #2d132c;
   position: fixed;
   bottom: 0;
+  box-shadow: 0px -5px 15px 0px #1f0f1e;
 }
 
 .blockquote {
   padding: 15px;
   margin-bottom: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
+}
+
+.blockquote-footer {
+  padding-bottom: 5px;
+}
+
+.credits {
+  font-size: .8rem;
+  text-align: center;
 }
