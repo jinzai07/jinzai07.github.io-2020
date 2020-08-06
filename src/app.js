@@ -17,10 +17,15 @@ app.use('/public',express.static(path.join(__dirname, 'static')));
 app.get('/', async (req, res) => {
   const navLinks = ['Awards', 'About', 'Contact'];
   const quoteApi = 'https://quotes.rest/qod';
-  const quoteRequest = await axios.get(quoteApi);
+  // const quoteRequest = await axios.get(quoteApi);
+  // const quoteResponse = {
+  //   quote: quoteRequest.data.contents.quotes[0].quote,
+  //   author: quoteRequest.data.contents.quotes[0].author
+  // }
+
   const quoteResponse = {
-    quote: quoteRequest.data.contents.quotes[0].quote,
-    author: quoteRequest.data.contents.quotes[0].author
+    quote: 'Do not let what you cannot do interfere with what you can do.',
+    author: 'John Wooden'
   }
 
   return res.render('index', { navLinks, quoteResponse });
