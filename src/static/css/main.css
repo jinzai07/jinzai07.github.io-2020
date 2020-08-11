@@ -16,14 +16,21 @@
 }
 
 .body-container {
-  height: 100%;
   width: 100%;
   background-color: #3f253e;
-  height: 100%;
   position: fixed;
   bottom: 0;
+  height: 95%;
+  color: #fff;
 }
 
 .body-description {
-  border: 1px solid red;
+  margin-top: 100px;
+  padding: 50px;
+}
+
+@media (max-width: 576px) {
+  .body-description {
+    padding: 15px;
+  }
 }

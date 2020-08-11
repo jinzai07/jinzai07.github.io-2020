@@ -6,3 +6,19 @@ window.addEventListener("resize", () => {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
+
+let i = 0;
+const text = 'Hi, I\'m Shinji.';
+const speed = 120;
+
+const typeWriter = () => {
+  const introDiv = document.querySelector("#intro");
+
+  if (i < text.length) {
+    introDiv.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+typeWriter();
