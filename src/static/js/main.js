@@ -18,6 +18,12 @@ const typeWriter = () => {
     introDiv.innerHTML += text.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
+  } else {
+    setTimeout(() => {
+      introDiv.innerHTML = '';
+      i = 0;
+      typeWriter();
+    }, 3000);
   }
 }
 
