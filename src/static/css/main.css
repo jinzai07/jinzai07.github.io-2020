@@ -22,6 +22,7 @@
   bottom: 0;
   height: 95%;
   color: #fff;
+  display: flex;
 }
 
 .body-description {
@@ -29,8 +30,34 @@
   padding: 50px;
 }
 
+.body-image {
+  border: 1px solid red;
+}
+
+.rocket {
+  display: none;
+}
+
+
+
 @media (max-width: 576px) {
   .body-description {
     padding: 15px;
+  }
+
+  .body-container {
+    flex-direction: column;
+  }
+
+  .rocket {
+    display: block;
+    position: absolute;
+    right: 35px;
+    bottom: 0px;
+    transition: transform 1s ease;
+  }
+
+  .rocket:hover {
+    transform: translateY(-100vh);
   }
 }
