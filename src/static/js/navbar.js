@@ -21,23 +21,18 @@ const adjustLogoSize = (e) => {
 
 const navButton = document.querySelector('.nav-button-trigger');
 const navLinks = document.querySelector('.nav-links');
-/**
- * Fired on click of hamburger.
- */
+
+// Fired on click of hamburger.
 navButton.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-/**
- * Fired on resize window.
- */
+// Fired on resize window.
 window.addEventListener('resize', (e) => {
   adjustLogoSize(e);
 });
 
-/**
- * Fired on load of window.
- */
+// Fired on load of window.
 window.addEventListener('load', (e) => {
   adjustLogoSize(e);
 });
