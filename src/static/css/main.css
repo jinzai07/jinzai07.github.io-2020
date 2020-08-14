@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
+  color: #fff;
 }
 
 .container-fluid {
@@ -20,7 +21,6 @@
   position: fixed;
   bottom: 0;
   height: 95%;
-  color: #fff;
   display: flex;
   flex-direction: column;
 }
@@ -28,6 +28,10 @@
 .body-description {
   margin-top: 100px;
   padding: 50px;
+}
+
+.body-description a {
+  color: #c92941;
 }
 
 .rocket {
@@ -38,17 +42,21 @@
   transition: transform 1s ease-in;
 }
 
+#intro {
+  color: #c92941;
+}
+
 .rocket.fly {
   transform: translateY(-100vh);
 }
 
 .border-line {
-  border-bottom: 1px solid #fff;
+  border-bottom: 3px solid #2d132c;
   width: 90%;
   position: relative;
   margin: 0 auto;
   border-radius: 20px;
-  margin-top: 80px;
+  margin-top: 2rem;
 }
 
 .icon {
