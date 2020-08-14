@@ -1,8 +1,7 @@
 #navigation {
   display: flex;
   justify-content: flex-end;
-  background-color: #2d132c;
-  color: #fff;
+  background-color: var(--secondary);
   height: 10vh;
   position: fixed;
   width: 100%;
@@ -40,13 +39,13 @@
 }
 
 .nav-item:hover {
-  background-color: #431c42;
+  background-color: var(--secondary-light);
   cursor: pointer;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 
 .nav-button-trigger {
