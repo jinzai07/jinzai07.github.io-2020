@@ -16,7 +16,16 @@
   padding-bottom: 5px;
 }
 
+.blockquote-footer a {
+  color: var(--info);
+}
+
 .credits {
   font-size: .8rem;
   text-align: center;
+}
+
+.quote {
+  max-height: 5rem;
+  overflow: auto;
 }
