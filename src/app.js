@@ -16,35 +16,40 @@ app.use('/public',express.static(path.join(__dirname, 'static')));
 //Custom middlewares
 
 /**
- * Get random quote, appends in res.quote
+ * Get random quote, appends in app.get('quote')
  */
 app.use(async (req, res, next) => {
   const quoteApi = 'https://quotes.rest/qod';
+  const quote = app.get('quote');
 
-  // const quoteRequest = await axios.get(quoteApi);
-  // const quoteResponse = {
-  //   quote: quoteRequest.data.contents.quotes[0].quote,
-  //   author: quoteRequest.data.contents.quotes[0].author
-  // }
-  const quoteResponse = {
-    quote: 'Do not let what you cannot do interfere with what you can do.',
-    author: 'John Wooden'
+  if (!quote) {
+    const quoteRequest = await axios.get(quoteApi);
+    const quoteResponse = {
+      quote: quoteRequest.data.contents.quotes[0].quote,
+      author: quoteRequest.data.contents.quotes[0].author
+    }
+    app.set('quote', quoteResponse);
   }
-  res.quote = quoteResponse;
   next();
 });
 
 //Available Routes
 app.get('/', async (req, res) => res.render('index', {
   navLinks,
-  quoteResponse: res.quote,
+  quoteResponse: app.get('quote'),
   title: 'Home'
 }));
 
 app.get('/about', (req, res) => res.render('about', {
   navLinks,
-  quoteResponse: res.quote,
+  quoteResponse: app.get('quote'),
   title: 'About'
+}));
+
+app.get('/contact', (req, res) => res.render('contact', {
+  navLinks,
+  quoteResponse: app.get('quote'),
+  title: 'Contact Me'
 }));
 
 app.get('*', (req, res) => res.redirect('/'));
