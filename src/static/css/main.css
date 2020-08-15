@@ -46,7 +46,7 @@
   display: block;
   position: absolute;
   right: 35px;
-  bottom: 15px;
+  bottom: 50px;
   transition: transform 1s ease-in;
 }
 
@@ -79,7 +79,7 @@
 .icon-list {
   display: flex;
   justify-content: center;
-  margin: 35px 10px 10px 10px;
+  margin: 25px 10px 10px 10px;
 }
 
 .icon-list a {
