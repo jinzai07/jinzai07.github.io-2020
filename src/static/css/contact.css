@@ -1,6 +1,6 @@
 .form-body {
   margin-top: 100px;
-  width: 80%;
+  width: 50%;
 }
 
 .body-container {
@@ -15,6 +15,25 @@
   height: 3rem;
 }
 
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--secondary);
+}
+
 .form-control:focus {
   border-color: var(--info);
+}
+
+.alert {
+  background-color: var(--info);
+  color: var(--white);
+}
+
+@media (max-width: 576px) {
+  .form-body {
+    width: 80%;
+  }
 }
