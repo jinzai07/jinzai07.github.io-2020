@@ -17,6 +17,11 @@
 
 .container-fluid {
   padding: 0;
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--primary);
+  z-index: 0;
+  overflow: hidden;
 }
 
 .resize-animation-stopper * {
@@ -26,16 +31,13 @@
 
 .body-container {
   width: 100%;
-  background-color: var(--primary);
-  position: fixed;
-  bottom: 0;
-  height: 95%;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 96px);
 }
 
 .body-description {
-  margin-top: 100px;
+  margin-top: 170px;
   padding: 50px;
 }
 
@@ -47,12 +49,17 @@
   display: block;
   position: absolute;
   right: 35px;
-  bottom: 50px;
-  transition: transform 1s ease-in;
+  bottom: -100px;
+  transition: transform .8s ease-in;
+  cursor: pointer;
 }
 
 #intro {
   color: var(--info);
+}
+
+.rocket:hover {
+  transform: scale(1.5);
 }
 
 .rocket.fly {
@@ -65,7 +72,7 @@
   position: relative;
   margin: 0 auto;
   border-radius: 20px;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .icon {

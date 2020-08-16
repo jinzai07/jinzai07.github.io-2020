@@ -1,9 +1,8 @@
 #footer {
   width: 100%;
   background-color: var(--secondary);
-  position: fixed;
-  bottom: 0;
   box-shadow: 0px -5px 15px 0px #1f0f1e;
+  min-height: 6em;
 }
 
 .blockquote {

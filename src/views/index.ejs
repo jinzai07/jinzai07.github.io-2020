@@ -2,29 +2,26 @@
 <html lang="en">
   <%- include('partials/head') %>
 <body>
-  <img src="/public/icons/planet.png" class="planet" alt="planet">
   <div class="container-fluid">
+  <img src="/public/icons/planet.png" class="planet" alt="planet">
   <%- include('partials/navbar') %>
-  <div class="body-container">
-    <div class="body-description mb-5">
-      <h1 id="intro" class="display-4 mb-5"></h1>
-      <p>I'm a Web developer,</p>
-      <p>and I make awesome apps!</p>
-      <p>I'm currently based in Manila, Philippines.</p>
-      <a href="">More about me!</a>
-    </div>
-    <div class="border-line"></div>
-    <div class="body-image">
+    <div class="body-container">
+      <div class="body-description mb-5">
+        <h1 id="intro" class="display-4 mb-5"></h1>
+        <p>I'm a Web developer,</p>
+        <p>and I make awesome apps!</p>
+        <p>I'm currently based in Manila, Philippines.</p>
+        <a href="">More about me!</a>
+      </div>
+      <div class="border-line"></div>
       <img id="rocket" class="rocket" src="/public/icons/rocket.png" alt="planets" height="200">
+      <div class="icon-list">
+        <a href="https://www.linkedin.com/in/shinji-yumikura-682097163/"><img src="/public/icons/linkedin.svg" class="icon" alt="linkedin"></a>
+        <a href="https://github.com/jinzai07"><img src="/public/icons/github.svg" class="icon" alt="github"></a>
+        <a href="mailto:shinjiyumikura@gmail.com"><img src="/public/icons/gmail.svg" class="icon" alt="gmail"></a>
+      </div>
     </div>
-    <div class="icon-list">
-      <a href="https://www.linkedin.com/in/shinji-yumikura-682097163/"><img src="/public/icons/linkedin.svg" class="icon" alt="linkedin"></a>
-      <a href="https://github.com/jinzai07"><img src="/public/icons/github.svg" class="icon" alt="github"></a>
-      <a href="mailto:shinjiyumikura@gmail.com"><img src="/public/icons/gmail.svg" class="icon" alt="gmail"></a>
-    </div>
-
-  </div>
-  <%- include('partials/footer') %>
+    <%- include('partials/footer') %>
   </div>
 </body>
 <script src="/public/js/main.js"></script>
