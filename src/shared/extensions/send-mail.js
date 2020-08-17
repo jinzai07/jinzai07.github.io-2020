@@ -10,16 +10,16 @@ export const sendEmail = async (req, res, next) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.GMAIL_EMAIL,
+      user: process.env.GMAIL_EMAIL_FROM,
       pass: process.env.GMAIL_PASSWORD
     }
   });
 
   const options = {
     from: email,
-    to: process.env.GMAIL_EMAIL,
-    subject: 'Contact me - Portfolio 2020',
-    text: `Sent by - ${email} - ${message}`
+    to: process.env.GMAIL_EMAIL_TO,
+    subject: `Contact me - Portfolio 2020 - ${email}`,
+    text: message
   }
 
   try {
