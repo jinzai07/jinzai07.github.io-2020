@@ -41,8 +41,13 @@
   padding: 50px;
 }
 
-.body-description a {
+a {
   color: var(--info);
+}
+
+.header-title {
+  text-align: center;
+  margin: .5em;
 }
 
 .rocket {
