@@ -77,7 +77,7 @@ a:hover {
 }
 
 .border-line {
-  border-bottom: 3px dashed var(--secondary);
+  border-bottom: 3px dashed var(--info);
   width: 90%;
   position: relative;
   margin: 0 auto;

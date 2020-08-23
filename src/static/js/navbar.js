@@ -1,24 +1,3 @@
-/**
- * Method in dynamically changing logo size
- * based on window width.
- * @param {*} e generic event object
- */
-const adjustLogoSize = (e) => {
-  const logo = document.querySelector('#brand-logo');
-  const currentWidth = e.currentTarget.innerWidth;
-  const maxWidth = e.currentTarget.outerWidth;
-  const minWidthOffset = 956.2;
-
-  if (currentWidth <= minWidthOffset) {
-    logo.width = logo.height = 70;
-    return;
-  } else if (currentWidth >= minWidthOffset) {
-    logo.width = logo.height = 100;
-    return;
-  }
-  logo.width = logo.height = currentWidth/(maxWidth/100);
-}
-
 const navButton = document.querySelector('.nav-button-trigger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -27,12 +6,19 @@ navButton.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Fired on resize window.
-window.addEventListener('resize', (e) => {
-  adjustLogoSize(e);
-});
+const setActiveRoute = () => {
+  const route = window.location.pathname.substring(1);
+  if (!route) { return; }
+  const navLinks = Array.from(document.querySelectorAll('.nav-item'));
+  navLinks.forEach(link => {
+    const url = link.href.split('/');
+    const path = url[url.length - 1];
 
-// Fired on load of window.
-window.addEventListener('load', (e) => {
-  adjustLogoSize(e);
-});
+    if (path === route) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+setActiveRoute();

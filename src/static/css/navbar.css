@@ -7,10 +7,11 @@
   width: 100%;
   z-index: 1;
   box-shadow: 0px 5px 15px 0px #1f0f1e;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
   overflow: hidden;
-  border-bottom: 5px dashed var(--info);
+}
+
+#brand-logo {
+  height: 130px;
 }
 
 .nav-logo {
@@ -40,11 +41,15 @@
 }
 
 .nav-item:hover {
-  background-color: var(--secondary-light);
   cursor: pointer;
+  border: 3px dashed var(--info);
 }
 
-.nav-links li a {
+.nav-item.active {
+  border: 3px dashed var(--info);
+}
+
+.nav-links a {
   text-decoration: none;
   color: var(--white);
 }
@@ -87,5 +92,9 @@
     flex-direction: column;
     height: auto;
     justify-content: space-between;
+  }
+
+  #brand-logo {
+    height: 80px;
   }
 }
