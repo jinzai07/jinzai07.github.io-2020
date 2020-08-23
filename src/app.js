@@ -42,6 +42,11 @@ app.get('/contact', (req, res) => res.render('contact', {
     quoteResponse: app.get('quote'),
     title: 'Contact Me'
   }));
+app.get('/skills', (req, res) => res.render('skills', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'Skills'
+}));
 
 app.post('/send-mail', sendEmail);
 
