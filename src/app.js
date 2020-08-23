@@ -1,6 +1,15 @@
+import bodyParser from 'body-parser';
 import express from 'express';
 import path from 'path';
-import axios from 'axios';
+import favicon from 'serve-favicon';
+
+import { generateQuote } from './shared/extensions/random-quote-generator';
+import { sendEmail } from './shared/extensions/send-mail';
+
+import { AWARDS } from './shared/constants/awards';
+import { NAV_LINKS } from '../src/shared/constants/navigation-links'
+import { SKILLS } from './shared/constants/skills';
+
 
 const app = express();
 
@@ -11,20 +20,56 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
 app.use('/public',express.static(path.join(__dirname, 'static')));
 
+//Custom middlewares
 /**
- * Initialize App routes.
+ * Get random quote, appends in app.get('quote')
  */
-app.get('/', async (req, res) => {
-  const navLinks = ['Awards', 'About', 'Contact'];
-  const quoteApi = 'https://quotes.rest/qod';
-  const quoteRequest = await axios.get(quoteApi);
-  const quoteResponse = {
-    quote: quoteRequest.data.contents.quotes[0].quote,
-    author: quoteRequest.data.contents.quotes[0].author
-  }
+app.use(generateQuote);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(favicon(path.join(__dirname, 'static', 'icons', 'favicon.ico')))
 
-  return res.render('index', { navLinks, quoteResponse });
-});
-app.get('/about', (req, res) => res.render('about'));
+//Available Routes
+app.get('/', async (req, res) => res.render('index', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'Home'
+}));
+
+app.get('/about', (req, res) => res.render('about', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'About'
+}));
+
+app.get('/contact', (req, res) => res.render('contact', {
+    param: req.query.message,
+    navLinks: NAV_LINKS,
+    quoteResponse: app.get('quote'),
+    title: 'Contact Me'
+}));
+
+app.get('/awards', (req, res) => res.render('awards', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'Awards',
+  awards: AWARDS
+}));
+
+app.get('/skills', (req, res) => res.render('skills', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'Skills',
+  skills_1: SKILLS.filter(skill => skill.type === 1),
+  skills_2: SKILLS.filter(skill => skill.type === 2),
+  skills_3: SKILLS.filter(skill => skill.type === 3),
+  skills_4: SKILLS.filter(skill => skill.type === 4),
+}));
+
+//contact-us page
+app.post('/send-mail', sendEmail);
+
+//route wildcard
+app.get('*', (req, res) => res.redirect('/'));
 
 app.listen(3000);

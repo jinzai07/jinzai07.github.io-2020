@@ -1,0 +1,36 @@
+.body-container {
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  height: 3rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--info);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--info);
+}
+
+.form-control:focus {
+  border-color: var(--info);
+}
+
+.alert {
+  background-color: var(--info);
+  color: var(--white);
+}
+
+.btn {
+  border: 3px dashed var(--info);
+}
+
+.btn:hover {
+  border: 3px dashed var(--white);
+}

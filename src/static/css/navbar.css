@@ -1,17 +1,23 @@
 #navigation {
   display: flex;
-  justify-content: space-between;
-  background-color: #2d132c;
-  color: #fff;
+  justify-content: flex-end;
+  background-color: var(--secondary);
   height: 10vh;
   position: fixed;
   width: 100%;
   z-index: 1;
   box-shadow: 0px 5px 15px 0px #1f0f1e;
+  overflow: hidden;
+}
+
+#brand-logo {
+  height: 130px;
 }
 
 .nav-logo {
   width: auto;
+  position: fixed;
+  left: 0;
 }
 
 .nav-navigation {
@@ -35,13 +41,17 @@
 }
 
 .nav-item:hover {
-  background-color: #431c42;
   cursor: pointer;
+  border: 3px dashed var(--info);
 }
 
-.nav-links li a {
+.nav-item.active {
+  border: 3px dashed var(--info);
+}
+
+.nav-links a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 
 .nav-button-trigger {
@@ -62,6 +72,7 @@
   .nav-links.open {
     height: 200px;
     visibility: visible;
+    margin-top: 55px;
   }
 
   .nav-item {
@@ -73,8 +84,17 @@
     visibility: visible;
   }
 
+  .nav-logo {
+    position: relative;
+  }
+
   #navigation {
     flex-direction: column;
     height: auto;
+    justify-content: space-between;
+  }
+
+  #brand-logo {
+    height: 80px;
   }
 }

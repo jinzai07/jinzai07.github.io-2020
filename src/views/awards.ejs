@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="/public/css/awards.css">
+<body>
+  <div class="container-fluid">
+  <%- include('partials/navbar') %>
+  <div class="body-container">
+    <div class="content">
+      <h1 class="header-title">Awards &#127942;</h1>
+      <div class="row">
+        <% awards.forEach(award => { %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card mb-5">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= award.title %>
+                </h5>
+                <p class="card-text">
+                  <%= award.description %>
+                </p>
+                <% if (!!award.link) { %>
+                  <a href="<%= award.link %>" class="card-link" target="_blank" >View certificate</a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') %>
+  </div>
+</body>
+
+</html>
