@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import path from 'path';
+import favicon from 'serve-favicon';
 
 import { generateQuote } from './shared/extensions/random-quote-generator';
 import { sendEmail } from './shared/extensions/send-mail';
@@ -26,6 +27,7 @@ app.use('/public',express.static(path.join(__dirname, 'static')));
 app.use(generateQuote);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(favicon(path.join(__dirname, 'static', 'icons', 'favicon.ico')))
 
 //Available Routes
 app.get('/', async (req, res) => res.render('index', {
