@@ -2,10 +2,13 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import path from 'path';
 
-import { AWARDS } from './shared/constants/awards';
-import { NAV_LINKS } from '../src/shared/constants/navigation-links'
 import { generateQuote } from './shared/extensions/random-quote-generator';
 import { sendEmail } from './shared/extensions/send-mail';
+
+import { AWARDS } from './shared/constants/awards';
+import { NAV_LINKS } from '../src/shared/constants/navigation-links'
+import { SKILLS } from './shared/constants/skills';
+
 
 const app = express();
 
@@ -54,7 +57,11 @@ app.get('/awards', (req, res) => res.render('awards', {
 app.get('/skills', (req, res) => res.render('skills', {
   navLinks: NAV_LINKS,
   quoteResponse: app.get('quote'),
-  title: 'Skills'
+  title: 'Skills',
+  skills_1: SKILLS.filter(skill => skill.type === 1),
+  skills_2: SKILLS.filter(skill => skill.type === 2),
+  skills_3: SKILLS.filter(skill => skill.type === 3),
+  skills_4: SKILLS.filter(skill => skill.type === 4),
 }));
 
 //contact-us page

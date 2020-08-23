@@ -1,0 +1,24 @@
+.body-container {
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+}
+
+.skill-container {
+  width: 95%;
+  margin: 1.5em auto;
+}
+
+.progress-bar {
+  background-color: var(--info);
+}
+
+a {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 0;
+}

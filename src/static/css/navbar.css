@@ -10,6 +10,7 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   overflow: hidden;
+  border-bottom: 5px dashed var(--info);
 }
 
 .nav-logo {
@@ -66,6 +67,7 @@
   .nav-links.open {
     height: 200px;
     visibility: visible;
+    margin-top: 55px;
   }
 
   .nav-item {
