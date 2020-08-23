@@ -45,9 +45,13 @@ a {
   color: var(--info);
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .header-title {
   text-align: center;
-  margin: .5em;
+  margin: .5em 0;
 }
 
 .rocket {
@@ -68,11 +72,11 @@ a {
 }
 
 .rocket.fly {
-  transform: translateY(-100vh);
+  transform: translateY(-150vh);
 }
 
 .border-line {
-  border-bottom: 3px solid var(--secondary);
+  border-bottom: 3px dashed var(--secondary);
   width: 90%;
   position: relative;
   margin: 0 auto;
@@ -111,6 +115,21 @@ a {
   transform: rotate(180deg);
 }
 
+.content {
+  margin-top: 120px;
+  width: 50%;
+}
+
+.card {
+  background-color: var(--secondary);
+  border-radius: 35px;
+  border: 5px dashed var(--info);
+}
+
+.card-title {
+  color: var(--info);
+}
+
 @media (max-width: 576px) {
   .body-description {
     padding: 15px;
@@ -127,5 +146,9 @@ a {
   .planet {
     top: -60px;
     right: -140px;
+  }
+
+  .content {
+    width: 80%;
   }
 }

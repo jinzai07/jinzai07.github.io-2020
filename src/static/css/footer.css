@@ -3,6 +3,9 @@
   background-color: var(--secondary);
   box-shadow: 0px -5px 15px 0px #1f0f1e;
   min-height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .blockquote {
