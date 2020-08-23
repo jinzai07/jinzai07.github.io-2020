@@ -2,7 +2,8 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import path from 'path';
 
-import { navLinks } from '../src/shared/constants/navigation-links'
+import { AWARDS } from './shared/constants/awards';
+import { NAV_LINKS } from '../src/shared/constants/navigation-links'
 import { generateQuote } from './shared/extensions/random-quote-generator';
 import { sendEmail } from './shared/extensions/send-mail';
 
@@ -25,31 +26,41 @@ app.use(bodyParser.json());
 
 //Available Routes
 app.get('/', async (req, res) => res.render('index', {
-  navLinks,
+  navLinks: NAV_LINKS,
   quoteResponse: app.get('quote'),
   title: 'Home'
 }));
 
 app.get('/about', (req, res) => res.render('about', {
-  navLinks,
+  navLinks: NAV_LINKS,
   quoteResponse: app.get('quote'),
   title: 'About'
 }));
 
 app.get('/contact', (req, res) => res.render('contact', {
     param: req.query.message,
-    navLinks,
+    navLinks: NAV_LINKS,
     quoteResponse: app.get('quote'),
     title: 'Contact Me'
-  }));
+}));
+
+app.get('/awards', (req, res) => res.render('awards', {
+  navLinks: NAV_LINKS,
+  quoteResponse: app.get('quote'),
+  title: 'Awards',
+  awards: AWARDS
+}));
+
 app.get('/skills', (req, res) => res.render('skills', {
   navLinks: NAV_LINKS,
   quoteResponse: app.get('quote'),
   title: 'Skills'
 }));
 
+//contact-us page
 app.post('/send-mail', sendEmail);
 
+//route wildcard
 app.get('*', (req, res) => res.redirect('/'));
 
 app.listen(3000);

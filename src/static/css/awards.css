@@ -1,0 +1,16 @@
+.body-container {
+  align-items: center;
+}
+
+.content {
+  width: 90%;
+}
+
+.card {
+  height: 18em;
+}
+
+.card-link {
+  position: absolute;
+  bottom: 25px;
+}
