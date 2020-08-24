@@ -1,5 +1,5 @@
 <h2>Personal portfolio 2020</h2>
-<p>This is a simple nodeJS application for myself, as a personal portfolio while also trying out some tools I have not yet tried before.</p>
+<p>This is a simple nodeJS application for myself, as a personal portfolio for the year 2020, while also trying out some tools I have not yet tried before.</p>
 
 <h4>Main Tools/Libraries used:</h4>
 <ul>
