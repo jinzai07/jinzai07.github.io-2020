@@ -15,7 +15,7 @@ export const AWARDS = [
   },
   {
     title: 'Responsive Web Design Certification - 2019',
-    description: 'descriptionResponsive Web Design Certification, developer certification, representing approximately 300 hours of coursework.',
+    description: 'Responsive Web Design Certification, developer certification, representing approximately 300 hours of coursework.',
     link: 'https://www.freecodecamp.org/certification/fccca438d0e-6b18-4b43-b8e5-2f167f99a91c/responsive-web-design'
   }
 ]
