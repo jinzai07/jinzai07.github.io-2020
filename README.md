@@ -7,6 +7,7 @@
   <li><a href="https://expressjs.com/">Express JS</a></li>
   <li><a href="https://getbootstrap.com/">Boostrap</a></li>
   <li><a href="https://nodemailer.com/about/">Nodemailer</a></li>
+  <li><a href="https://ejs.co/">EJS</a></li>
   <li>Axios</li>
 </ul>
 
