@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm install",
-    "start": "babel-node src/app.js"
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s"
   },
   "repository": {
     "type": "git",
