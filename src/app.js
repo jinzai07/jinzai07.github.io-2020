@@ -71,4 +71,4 @@ app.post('/send-mail', sendEmail);
 //route wildcard
 app.get('*', (req, res) => res.redirect('/'));
 
-app.listen(3000);
+app.listen(app.listen(process.env.PORT || 3000));
